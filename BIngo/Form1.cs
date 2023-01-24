@@ -5,12 +5,14 @@ using System.Data;
 using System.Deployment.Application;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Media;
 
 namespace BIngo
 {
@@ -52,7 +54,7 @@ namespace BIngo
 
             showbuttons();
 
-            numbergen();
+            numbergen(); 
 
         }
 
@@ -91,6 +93,77 @@ namespace BIngo
             o5Button.Visible = true;
  
         }
+
+        private void hidebuttons()
+        {
+            bingoLabel.Visible = false;
+
+            b1Button.Visible = false;
+            b2Button.Visible = false;
+            b3Button.Visible = false;
+            b4Button.Visible = false;
+            b5Button.Visible = false;
+
+            i1Button.Visible = false;
+            i2Button.Visible = false;
+            i3Button.Visible = false;
+            i4Button.Visible = false;
+            i5Button.Visible = false;
+
+            n1Button.Visible = false;
+            n2Button.Visible = false;
+            n3Button.Visible = false;
+            n4Button.Visible = false;
+            n5Button.Visible = false;
+
+            g1Button.Visible = false;
+            g2Button.Visible = false;
+            g3Button.Visible = false;
+            g4Button.Visible = false;
+            g5Button.Visible = false;
+
+            o1Button.Visible = false;
+            o2Button.Visible = false;
+            o3Button.Visible = false;
+            o4Button.Visible = false;
+            o5Button.Visible = false;
+
+        }
+
+        private void clearButtons()
+        {
+            
+            b1Button.Text = "B1";
+            b2Button.Text = "B2";
+            b3Button.Text = "B3";
+            b4Button.Text = "B4";
+            b5Button.Text = "B5";
+
+            i1Button.Text = "I1";
+            i2Button.Text = "I2";
+            i3Button.Text = "I3";
+            i4Button.Text = "I4";
+            i5Button.Text = "I5";
+
+            n1Button.Text = "N1";
+            n2Button.Text = "N2";
+            n3Button.Text = "N3";
+            n4Button.Text = "N4";
+            n5Button.Text = "N5";
+
+            g1Button.Text = "G1";
+            g2Button.Text = "G2";
+            g3Button.Text = "G3";
+            g4Button.Text = "G4";
+            g5Button.Text = "G5";
+
+            o1Button.Text = "O1";
+            o2Button.Text = "O2";
+            o3Button.Text = "O3";
+            o4Button.Text = "O4";
+            o5Button.Text = "05";
+        }
+
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             if (escapeDown == true)
@@ -106,8 +179,13 @@ namespace BIngo
             if (gameState == "waiting")
             {
                 titleLabel.Text = "Bingo!";
-                escLabel.Text = "Press esc to exit";
+                escLabel.Text = "press this to exit";
                 timeLabel.Text = "";
+                startButton.Visible = true;
+                againButton.Visible = false;
+                exitButton.Visible = false;
+                               
+
             }
             else if (gameState == "running")
             {
@@ -116,6 +194,7 @@ namespace BIngo
                 numcallButton.Visible = true;
                 timeLabel.Text = "";
                 
+                clearButtons();
 
                 e.Graphics.FillRectangle(mintcreamBrush, Card);
                 e.Graphics.FillRectangle(lgreenBrush, CardLabel);
@@ -137,16 +216,15 @@ namespace BIngo
                 //e.Graphics.DrawLine(drawPen, );
 
             }
+            else if (gameState == "ending")
+            {
+                e.Graphics.Clear(Color.Gainsboro);
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            //switch (e.KeyCode)
-            //{
-            //    case Keys.Escape:
-            //        escDown = true; 
-            //        break;
-            //}
+            
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -322,162 +400,293 @@ namespace BIngo
 
         private void b1Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             b1Button.Text = "X";
             b1Button.BackColor = Color.Salmon;
         }
 
         private void b2Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             b2Button.Text = "X";
             b2Button.BackColor = Color.Salmon;
         }
 
         private void b3Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             b3Button.Text = "X";
             b3Button.BackColor = Color.Salmon;
         }
 
         private void b4Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             b4Button.Text = "X";
             b4Button.BackColor = Color.Salmon;
         }
 
         private void b5Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             b5Button.Text = "X";
             b5Button.BackColor = Color.Salmon;
         }
 
         private void i1Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             i1Button.Text = "X";
             i1Button.BackColor = Color.Salmon;
         }
 
         private void i2Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             i2Button.Text = "X";
             i2Button.BackColor = Color.Salmon;
         }
 
         private void i3Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             i3Button.Text = "X";
             i3Button.BackColor = Color.Salmon;
         }
 
         private void i4Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             i4Button.Text = "X";
             i4Button.BackColor = Color.Salmon;
         }
 
         private void i5Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             i5Button.Text = "X";
             i5Button.BackColor = Color.Salmon;
         }
 
         private void n1Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             n1Button.Text = "X";
             n1Button.BackColor = Color.Salmon;
         }
 
         private void n2Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             n2Button.Text = "X";
             n2Button.BackColor = Color.Salmon;
         }
 
         private void n3Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             n3Button.Text = "X";
             n3Button.BackColor = Color.Salmon;
         }
 
         private void n4Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             n4Button.Text = "X";
             n4Button.BackColor = Color.Salmon;
         }
 
         private void n5Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             n5Button.Text = "X";
             n5Button.BackColor = Color.Salmon;
         }
 
         private void g1Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             g1Button.Text = "X";
             g1Button.BackColor = Color.Salmon;
         }
 
         private void g2Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             g2Button.Text = "X";
             g2Button.BackColor = Color.Salmon;
         }
 
         private void g3Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             g3Button.Text = "X";
             g3Button.BackColor = Color.Salmon;
         }
 
         private void g4Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             g4Button.Text = "X";
             g4Button.BackColor = Color.Salmon;
         }
 
         private void g5Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             g5Button.Text = "X";
             g5Button.BackColor = Color.Salmon;
         }
 
         private void o1Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             o1Button.Text = "X";
             o1Button.BackColor = Color.Salmon;
         }
 
         private void o2Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             o2Button.Text = "X";
             o2Button.BackColor = Color.Salmon;
         }
 
         private void o3Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             o3Button.Text = "X";
             o3Button.BackColor = Color.Salmon;
         }
 
         private void o4Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             o4Button.Text = "X";
             o4Button.BackColor = Color.Salmon;
         }
 
         private void o5Button_Click(object sender, EventArgs e)
         {
+            SoundPlayer uialert = new SoundPlayer(Properties.Resources.uialert);
+            uialert.Play();
             o5Button.Text = "X";
             o5Button.BackColor = Color.Salmon;
         }
 
         private void bingoButton_Click(object sender, EventArgs e)
         {
+            SoundPlayer bingo = new SoundPlayer(Properties.Resources.bingo);
+            bingo.Play();
+            gameState = "ending";
+            BackColor = Color.Gainsboro;
+            hidebuttons();
+            stopButton.Visible = false;
+            bingoButton.Visible = false;
+            numboxLabel.Text = "";
+            numcallOutput.Text = "";
+            numcallButton.Visible = false;
+            againButton.Visible = true;
+            exitButton.Visible = true;
+
+            timeLabel.Visible = true;
+            timeLabel.Text = $"You got a bingo!";
 
         }
 
         private void stopButton_Click(object sender, EventArgs e)
         {
+            SoundPlayer badoo = new SoundPlayer(Properties.Resources.badoo);
+            badoo.Play();
+            gameState = "stopping";
+            hidebuttons();
+            stopButton.Visible = false;
+            bingoButton.Visible = false;
+            numboxLabel.Text = "";
+            numcallOutput.Text = "";
+            numcallButton.Visible = false;
+            againButton.Visible = true;
+            exitButton.Visible = true;
 
+            againButton.Text = "Restart";
+
+            timeLabel.Visible = true;
+            timeLabel.Text = $"You stopped the game!";
+        }
+
+        private void againButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer badoo = new SoundPlayer(Properties.Resources.bingo);
+            badoo.Play();
+            gameState = "waiting";
+
+            b1Button.BackColor = Color.Transparent;
+            b2Button.BackColor = Color.Transparent;
+            b3Button.BackColor = Color.Transparent;
+            b4Button.BackColor = Color.Transparent;
+            b5Button.BackColor = Color.Transparent;
+
+            i1Button.BackColor = Color.Transparent;
+            i2Button.BackColor = Color.Transparent;
+            i3Button.BackColor = Color.Transparent;
+            i4Button.BackColor = Color.Transparent;
+            i5Button.BackColor = Color.Transparent;
+
+            n1Button.BackColor = Color.Transparent;
+            n2Button.BackColor = Color.Transparent;
+            n3Button.BackColor = Color.Transparent;
+            n4Button.BackColor = Color.Transparent;
+            n5Button.BackColor = Color.Transparent;
+
+            g1Button.BackColor = Color.Transparent;
+            g2Button.BackColor = Color.Transparent;
+            g3Button.BackColor = Color.Transparent;
+            g4Button.BackColor = Color.Transparent;
+            g5Button.BackColor = Color.Transparent;
+
+            o1Button.BackColor = Color.Transparent;
+            o2Button.BackColor = Color.Transparent;
+            o3Button.BackColor = Color.Transparent;
+            o4Button.BackColor = Color.Transparent;
+            o5Button.BackColor = Color.Transparent;
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer badoo = new SoundPlayer(Properties.Resources.bingo);
+            badoo.Play();
+            Application.Exit();
+        }
+
+        private void escLabel_Click(object sender, EventArgs e)
+        {
+            SoundPlayer badoo = new SoundPlayer(Properties.Resources.bingo);
+            badoo.Play();
+            Application.Exit();
         }
     }
 }

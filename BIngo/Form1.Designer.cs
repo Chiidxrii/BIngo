@@ -65,16 +65,19 @@
             this.o4Button = new System.Windows.Forms.Button();
             this.o5Button = new System.Windows.Forms.Button();
             this.bingoLabel = new System.Windows.Forms.Label();
+            this.againButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLabel
             // 
+            this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.titleLabel.Location = new System.Drawing.Point(342, 105);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(263, 76);
+            this.titleLabel.Size = new System.Drawing.Size(260, 73);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Bingo!";
             // 
@@ -83,11 +86,12 @@
             this.escLabel.AutoSize = true;
             this.escLabel.BackColor = System.Drawing.Color.Transparent;
             this.escLabel.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.escLabel.Location = new System.Drawing.Point(1, 568);
+            this.escLabel.Location = new System.Drawing.Point(12, 570);
             this.escLabel.Name = "escLabel";
-            this.escLabel.Size = new System.Drawing.Size(231, 23);
+            this.escLabel.Size = new System.Drawing.Size(244, 23);
             this.escLabel.TabIndex = 1;
-            this.escLabel.Text = "press esc to exit";
+            this.escLabel.Text = "click this to exit";
+            this.escLabel.Click += new System.EventHandler(this.escLabel_Click);
             // 
             // startButton
             // 
@@ -144,12 +148,11 @@
             // timeLabel
             // 
             this.timeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.timeLabel.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLabel.Location = new System.Drawing.Point(288, 9);
+            this.timeLabel.Font = new System.Drawing.Font("Courier New", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(244, 57);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(100, 32);
+            this.timeLabel.Size = new System.Drawing.Size(457, 121);
             this.timeLabel.TabIndex = 5;
-            this.timeLabel.Text = "7:30";
             this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // numcallButton
@@ -180,11 +183,12 @@
             // numboxLabel
             // 
             this.numboxLabel.BackColor = System.Drawing.Color.Transparent;
-            this.numboxLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numboxLabel.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numboxLabel.Location = new System.Drawing.Point(40, 50);
             this.numboxLabel.Name = "numboxLabel";
             this.numboxLabel.Size = new System.Drawing.Size(125, 125);
             this.numboxLabel.TabIndex = 8;
+            this.numboxLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // b5Button
             // 
@@ -573,12 +577,46 @@
             this.bingoLabel.Text = "B I N G O";
             this.bingoLabel.Visible = false;
             // 
+            // againButton
+            // 
+            this.againButton.AutoSize = true;
+            this.againButton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.againButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.againButton.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.againButton.ForeColor = System.Drawing.Color.Black;
+            this.againButton.Location = new System.Drawing.Point(207, 374);
+            this.againButton.Name = "againButton";
+            this.againButton.Size = new System.Drawing.Size(162, 53);
+            this.againButton.TabIndex = 35;
+            this.againButton.Text = "Again?";
+            this.againButton.UseVisualStyleBackColor = false;
+            this.againButton.Visible = false;
+            this.againButton.Click += new System.EventHandler(this.againButton_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.AutoSize = true;
+            this.exitButton.BackColor = System.Drawing.Color.MistyRose;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.ForeColor = System.Drawing.Color.Black;
+            this.exitButton.Location = new System.Drawing.Point(557, 374);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(162, 53);
+            this.exitButton.TabIndex = 36;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Visible = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(950, 600);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.againButton);
             this.Controls.Add(this.bingoLabel);
             this.Controls.Add(this.b1Button);
             this.Controls.Add(this.o2Button);
@@ -606,7 +644,6 @@
             this.Controls.Add(this.b4Button);
             this.Controls.Add(this.numboxLabel);
             this.Controls.Add(this.numcallButton);
-            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.bingoButton);
             this.Controls.Add(this.startButton);
@@ -614,6 +651,7 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.numcallOutput);
             this.Controls.Add(this.b5Button);
+            this.Controls.Add(this.timeLabel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -663,6 +701,8 @@
         private System.Windows.Forms.Button o4Button;
         private System.Windows.Forms.Button o5Button;
         private System.Windows.Forms.Label bingoLabel;
+        private System.Windows.Forms.Button againButton;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 
