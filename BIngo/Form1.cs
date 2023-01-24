@@ -36,6 +36,7 @@ namespace BIngo
         SolidBrush lgreenBrush = new SolidBrush(Color.LightGreen);
         Pen drawPen = new Pen(Color.Black, 3);
 
+
         public Form1()
         {
             InitializeComponent();
