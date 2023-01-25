@@ -641,7 +641,7 @@ namespace BIngo
 
         private void againButton_Click(object sender, EventArgs e)
         {
-            SoundPlayer badoo = new SoundPlayer(Properties.Resources.bingo);
+            SoundPlayer badoo = new SoundPlayer(Properties.Resources.badoo);
             badoo.Play();
             gameState = "waiting";
 
@@ -678,14 +678,14 @@ namespace BIngo
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            SoundPlayer badoo = new SoundPlayer(Properties.Resources.bingo);
+            SoundPlayer badoo = new SoundPlayer(Properties.Resources.badoo);
             badoo.Play();
             Application.Exit();
         }
 
         private void escLabel_Click(object sender, EventArgs e)
         {
-            SoundPlayer badoo = new SoundPlayer(Properties.Resources.bingo);
+            SoundPlayer badoo = new SoundPlayer(Properties.Resources.badoo);
             badoo.Play();
             Application.Exit();
         }
